@@ -1,30 +1,47 @@
-<template>
+<script>
+export default {
+  name: "App"
+};
+</script>
+
+
+<template> 
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <div class="link-style">
+      <router-link to="/" active-class="active-link" >Overview</router-link>
+      <router-link to="/input" active-class="active-link">Add new</router-link>
+
+    </div> 
   </nav>
-  <router-view/>
+
+  <router-view></router-view> <!-- This will display the correct page -->
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+<style scoped>
+.link-style {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+ 
 }
 
-nav {
-  padding: 30px;
+.link-style a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.link-style a:hover {
+  color: gray;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.active-link {
+  background-color: rgb(189, 209, 199);
+  padding: 10px 10px;
+  border-radius: 5px;
+
 }
 </style>
+
